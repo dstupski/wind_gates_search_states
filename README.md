@@ -134,3 +134,5 @@ Also found on Dryad are two other directories for the curious reader:  auxillary
             ├── single_pulse_mean_time_trace.csv
             └── wt_double_flash_distilled.csv
 
+# Raw Data Format
+While the figure notebooks are set up to run with the trimmed and processed data, the raw data is available.  Each nights experiment has its own directory which has a file ending in a .braidz extension, this contains raw tracking information.  With it inside the directory is an associated ROS .bag file which contains information from each of the trigger events throughout the nights recording.  To go from a raw data file to a trimmed .csv first convert the .bag file into a hdf5 file using the "bag2hdf5.py" script in the auxillary_code directory.  Then to trim the raw data to include only relevant trigger events run data_trimming.py <raw_tracking.braidz> <trigger_events.hdf5>.  Each nights trimmed output is then simply concatenated together to generate the trimmed data sets found in the trimmed data folder.  Any further processing is handled within the notebooks used to generate the figures.  
