@@ -14,3 +14,123 @@ To run the notebooks you only need data from the following repositories hosted o
 
 Also found on Dryad are two other directories for the curious reader:  auxillary_code and raw_data.  The former contains the code necessary to trim down the raw braid recordings and Ros .bag files into the trimmed data sets.  It also contains scripts for converting .bag files into hdf5 files for easier use.  The latter is the raw .braidz data and .bag files from every data set that contributes to this paper before it has been trimmed or quality controlled in any way. 
 
+# Repository layout
+
+.
+└── wind_gates_search_states/
+
+    ├── auxillary_code/
+    │   ├── bag2hdf5.py
+    │   └── data_trimming.py
+    ├── figure_first_templates/
+    │   ├── altitude_control.svg
+    │   ├── double_flash_genetic_control.svg
+    │   ├── etoh_anemo_for_supp.svg
+    │   ├── f1_part1.svg
+    │   ├── f1_part2.svg
+    │   ├── f2.svg
+    │   ├── f3.svg
+    │   ├── f4.svg
+    │   ├── f5.svg
+    │   ├── f6.svg
+    │   ├── genetic_control_supplement.svg
+    │   ├── s7.svg
+    │   ├── s8.svg
+    │   └── still_air_with_controls.svg
+    ├── main_text/
+    │   ├── f1_anemotaxis.ipynb
+    │   ├── f1_object_approach.ipynb
+    │   ├── f2.ipynb
+    │   ├── f3.ipynb
+    │   ├── f4.ipynb
+    │   ├── f5.ipynb
+    │   └── f6_and_s8_s9.ipynb
+    ├── raw_data/
+    │   ├── Orco_CsChrimson_double_flash
+    │   ├── Orco_CsChrimson_Laminar
+    │   ├── Orco_CsChrimson_no_atr_control
+    │   ├── Orco_CsChrimson_Object_Approach
+    │   ├── Orco_CsChrimson_Still_air
+    │   ├── Orco_CsChrimson_still_air_optic_flow_control
+    │   ├── UAS_CsChrimson_heterozygote_control
+    │   ├── vanBreugel_2014_reanalysis
+    │   ├── Wild_type_control_double_flash
+    │   ├── Wild_type_control_laminar_wind
+    │   ├── Wild_type_control_still_air
+    │   ├── Wild_type_object_approach_clean_air
+    │   └── Wild_type_object_approach_ethanol
+    ├── supplement/
+    │   ├── S2.ipynb
+    │   ├── S3.ipynb
+    │   ├── S4.ipynb
+    │   ├── S6.ipynb
+    │   └── S7.ipynb
+    ├── trajectories_for_figures/
+    │   ├── double_flash/
+    │   │   ├── double_pulse_sample_traj.csv
+    │   │   ├── no_pulse_example_trajs.csv
+    │   │   └── single_pulse_example.csv
+    │   ├── still_air/
+    │   │   ├── sacc_for_ang-vel_rep.csv
+    │   │   ├── single_pulse.csv
+    │   │   ├── traj_1.csv
+    │   │   ├── traj_2.csv
+    │   │   ├── traj_3.csv
+    │   │   ├── traj_4.csv
+    │   │   ├── traj_5.csv
+    │   │   ├── traj_6.csv
+    │   │   ├── traj_7.csv
+    │   │   ├── traj_8.csv
+    │   │   ├── traj_9.csv
+    │   │   ├── traj_10.csv
+    │   │   ├── traj_11.csv
+    │   │   └── traj_12.csv
+    │   ├── object1.csv
+    │   ├── object2.csv
+    │   ├── object3.csv
+    │   ├── orco_laminar1.csv
+    │   ├── orco_traj2.csv
+    │   ├── orco_traj3.csv
+    │   ├── wt_laminar1.csv
+    │   ├── wt_traj2.csv
+    │   └── wt_traj3.csv
+    └── trimmed_data/
+        ├── main/
+        │   ├── etoh_object.csv
+        │   ├── flash_object_approach.csv
+        │   ├── no_etoh_object.csv
+        │   ├── OrcoCshrimson_laminar_wind_merged.csv
+        │   ├── Orco_CsChrimson_still_air_merged.csv
+        │   ├── sham_object_approach.csv
+        │   ├── wild_type_laminar_merged.csv
+        │   └── wildtype_still_air_merged.csv
+        ├── mGSD_annotations/
+        │   ├── lw0_orco_sacc.csv
+        │   ├── lw0_wt_sacc.csv
+        │   ├── lw100_orco_sacc.csv
+        │   ├── lw100_wt_sacc.csv
+        │   ├── modified_GSD_laminar_wind_orco.csv
+        │   ├── modified_GSD_laminar_wind_wt.csv
+        │   ├── modified_GSD_no_wind_orco.csv
+        │   ├── modified_GSD_wt_no_wind.csv
+        │   ├── nw0_orco_sacc.csv
+        │   ├── nw0_wt_sacc.csv
+        │   ├── nw100_orco_sacc.csv
+        │   └── nw100_wt_sacc.csv
+        ├── supp/
+        │   ├── CsChrimson_hets.csv
+        │   ├── fly_trajec_data_all_etoh.hdf
+        │   ├── fly_traject_data_noodor_all.hdf
+        │   ├── no_wind_no_grid_orco.csv
+        │   └── OrcoCsChrimson_no_atr.csv
+        └── trimmed_double_flash/
+            ├── double_flash_mean_time_trace_qc.csv
+            ├── no_wind_wt_shams_merged_distilled.csv
+            ├── orco_double_pulse_distilled_response.csv
+            ├── orco_shams_distilled_merged.csv
+            ├── orco_single_distilled.csv
+            ├── sham_merged_mean_time_trace.csv
+            ├── single_flash_wt_distilled.csv
+            ├── single_pulse_mean_time_trace.csv
+            └── wt_double_flash_distilled.csv
+
