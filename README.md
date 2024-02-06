@@ -2,7 +2,7 @@
 Repository for creating figures associated with Stupski and van Breugel 2024
 
 # Overview
-This repository contains the Jupyter notebooks necessary to recreate the figures associated with "Wind Gates Search States in Free Flight"
+This repository contains the Jupyter notebooks necessary to recreate the figures, or to explore the data associated with "Wind Gates Search States in Free Flight"
 The current preprint can be found at: https://www.biorxiv.org/content/10.1101/2023.11.30.569086v2.abstract
 
 Notebooks are written in Python 2 and 3, using standard libraries, e.g. matplotlib, pandas, numpy etc.  There is however one more unique dependency to run the notebooks as they are written.  This dependency, FigureFirst, an Inkscape plugin that links figures made in jupyter notebooks directly into an inkscape .svg.  FigureFirst and its installation instructions can be found here.  https://github.com/FlyRanch/figurefirst
