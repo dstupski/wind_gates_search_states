@@ -10,9 +10,11 @@ Notebooks are written in Python 2 and 3, using standard libraries, e.g. matplotl
 # Contents
 This repository is meant to function as a complement to the full data hosted on Dryad here:  DRYAD_LINK
 
-To run the notebooks you only need data from the following repositories hosted on Dryad: figure_first_templates, trimmed_data, trajectories_for_figures, main_text, supplement.  If placed in a single directory, the internal pathing on the jupyter notebooks should allow recreation of all of the figures.  The jupyter notebooks can be found here, in this repository, and also in the Dryad repository.  
+# Generating Figures
+To run the figure notebooks you only need data from the following repositories hosted on Dryad: figure_first_templates, trimmed_data, trajectories_for_figures, main_text, supplement.  If placed in a single directory, the internal pathing on the jupyter notebooks should allow recreation of all of the figures.  The jupyter notebooks can be found here, in this repository, and also in the Dryad repository.  
 
-Also found on Dryad are two other directories for the curious reader:  auxillary_code and raw_data.  The former contains the code necessary to trim down the raw braid recordings and Ros .bag files into the trimmed data sets.  It also contains scripts for converting .bag files into hdf5 files for easier use.  The latter is the raw .braidz data and .bag files from every data set that contributes to this paper before it has been trimmed or quality controlled in any way. 
+# Raw data and data processing
+While the figure notebooks are set up to run with the trimmed and processed data, the raw data is also available on dryada in it's original .braidz file format (for more information visit https://strawlab.org/braid/) and the code necessary to process the raw tracking data into trimmed data sets. Each nights experiment has its own directory  within the "raw" directory.  In each recording bout  there is a file ending in a .braidz extension, this contains raw tracking information.  With it inside the same directory is an associated ROS .bag file which contains information from each of the trigger events throughout the nights recording.  To go from a raw data file to a trimmed .csv first convert the .bag file into a hdf5 file using the "bag2hdf5.py" script in the auxillary_code directory.  Then to trim the raw data to include only relevant trigger events run data_trimming.py <raw_tracking.braidz> <trigger_events.hdf5>.  Each nights trimmed output is then simply concatenated together to generate the trimmed data sets found in the trimmed data folder.  Any further processing is handled within the notebooks used to generate the figures.   
 
 # Repository layout
 
@@ -134,5 +136,4 @@ Also found on Dryad are two other directories for the curious reader:  auxillary
             ├── single_pulse_mean_time_trace.csv
             └── wt_double_flash_distilled.csv
 
-# Raw Data Format
-While the figure notebooks are set up to run with the trimmed and processed data, the raw data is available.  Each nights experiment has its own directory which has a file ending in a .braidz extension, this contains raw tracking information.  With it inside the directory is an associated ROS .bag file which contains information from each of the trigger events throughout the nights recording.  To go from a raw data file to a trimmed .csv first convert the .bag file into a hdf5 file using the "bag2hdf5.py" script in the auxillary_code directory.  Then to trim the raw data to include only relevant trigger events run data_trimming.py <raw_tracking.braidz> <trigger_events.hdf5>.  Each nights trimmed output is then simply concatenated together to generate the trimmed data sets found in the trimmed data folder.  Any further processing is handled within the notebooks used to generate the figures.  
+
