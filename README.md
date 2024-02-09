@@ -14,7 +14,8 @@ This repository is meant to function as a complement to the full data hosted on 
 To run the figure notebooks you only need data from the following repositories hosted on Dryad: figure_first_templates, trimmed_data, trajectories_for_figures, main_text, supplement.  If placed in a single directory, the internal pathing on the jupyter notebooks should allow recreation of all of the figures.  The jupyter notebooks can be found here, in this repository, and also in the Dryad repository.  
 
 # Raw data and data processing
-While the figure notebooks are set up to run with the trimmed and processed data, the raw data is also available on dryad in it's original .braidz file format (for more information visit https://strawlab.org/braid/) and the code necessary to process the raw tracking data into trimmed data sets. Each nights experiment has its own directory  within the "raw" directory.  In each recording bout  there is a file ending in a .braidz extension, this contains raw tracking information.  With it inside the same directory is an associated ROS .bag file which contains information from each of the trigger events throughout the nights recording.  To go from a raw data file to a trimmed .csv first convert the .bag file into a hdf5 file using the "bag2hdf5.py" script in the auxillary_code directory.  Then to trim the raw data to include only relevant trigger events run data_trimming.py <raw_tracking.braidz> <trigger_events.hdf5>.  Each nights trimmed output is then simply concatenated together to generate the trimmed data sets found in the trimmed data folder.  Any further processing is handled within the notebooks used to generate the figures.   
+While the figure notebooks are set up to run with the trimmed and processed data, the raw data is available from the authors (full raw recordings comprise several hundred gigatbytes) upon request in its original .braidz file recordings (for more information visit https://strawlab.org/braid/). We do however include here the processing scripts that convert the raw braid recordings into the trimmed data sets used in the paper.  All further processing is handled inside the jupyter notebooks that generate the figures themselves.  
+
 
 # Repository layout
 
@@ -47,20 +48,6 @@ While the figure notebooks are set up to run with the trimmed and processed data
     │   ├── f4.ipynb
     │   ├── f5.ipynb
     │   └── f6_and_s8_s9.ipynb
-    ├── raw_data/
-    │   ├── Orco_CsChrimson_double_flash
-    │   ├── Orco_CsChrimson_Laminar
-    │   ├── Orco_CsChrimson_no_atr_control
-    │   ├── Orco_CsChrimson_Object_Approach
-    │   ├── Orco_CsChrimson_Still_air
-    │   ├── Orco_CsChrimson_still_air_optic_flow_control
-    │   ├── UAS_CsChrimson_heterozygote_control
-    │   ├── vanBreugel_2014_reanalysis
-    │   ├── Wild_type_control_double_flash
-    │   ├── Wild_type_control_laminar_wind
-    │   ├── Wild_type_control_still_air
-    │   ├── Wild_type_object_approach_clean_air
-    │   └── Wild_type_object_approach_ethanol
     ├── supplement/
     │   ├── S2.ipynb
     │   ├── S3.ipynb
